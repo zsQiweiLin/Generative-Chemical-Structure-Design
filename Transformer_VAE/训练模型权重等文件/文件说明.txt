@@ -1,0 +1,21 @@
+1、zinc_high_qed.csv
+高 QED 分子数据集，包含 QED≥0.7、分子量在 100-500 范围内的类药分子 SMILES，用于增强训练集的类药性，若本地无此文件则自动从原始数据集筛选生成，由100w的原数据集，以QED指标和分子量大小筛选得到
+
+2、preprocess_results_full_data.pkl
+全量数据预处理缓存文件，存储预处理后的训练集和验证集数据（包含分子的 SMILES、SELFIES 编码及核心化学属性），避免重复执行耗时的预处理流程
+
+3、train_checkpoint_full.pth
+训练断点文件，包含当前训练 epoch、模型参数、优化器状态、混合精度缩放器状态、最优验证损失、vocab 及模型配置，支持断点续训
+
+4、best_transformer_vae_full_data.pth
+训练过程中最优模型文件，保存验证损失最低时的模型参数、优化器状态、epoch、vocab 及模型配置，可用于后续分子生成和模型部署
+
+5、temp_generated_smiles_full_data.csv
+模型生成分子的临时文件，存储去重后的有效 SMILES 序列，是后续多维度评估的原始数据来源
+
+6、lipinski_drug_likeness_analysis_full_data.csv
+类药性分析详情文件，包含生成分子的分子量、LogP、氢键供体 / 受体数、QED 评分、合成可及性（SAS）、Lipinski 规则满足数及类药总得分等核心指标
+
+7、final_generated_molecules_pycharm.csv
+最终生成分子及评估报告文件，整合了生成分子的 SMILES 和七维度评估指标（化学合理性、新颖性、多样性、唯一性、类药性、QED 评分、合成可及性），是模型生成效果的最终汇总
+

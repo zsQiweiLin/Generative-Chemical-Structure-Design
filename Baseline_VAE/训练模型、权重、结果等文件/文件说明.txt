@@ -1,0 +1,12 @@
+1、preprocess_results.pkl
+全量数据预处理缓存文件，存储预处理后的训练集和验证集数据（包含分子的 SMILES、SELFIES 编码及核心化学属性），避免重复执行耗时的预处理流程
+
+2、best_mol_vae.pth
+训练过程中最优模型文件，保存验证损失最低时的模型参数、优化器状态、epoch、vocab 及模型配置，可用于后续分子生成和模型部署
+
+3、temp_generated_smiles.csv
+模型生成分子的临时文件，存储去重后的有效 SMILES 序列，是后续多维度评估的原始数据来源
+
+4、final_generated_molecules.csv
+最终生成分子及评估报告文件，整合了生成分子的 SMILES 和七维度评估指标（化学合理性、新颖性、多样性、唯一性、类药性、QED 评分、合成可及性），是模型生成效果的最终汇总
+

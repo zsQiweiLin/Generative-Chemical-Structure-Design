@@ -1,0 +1,6 @@
+torch版本：2.9.1+cu128
+selfies版本：2.1.1
+rdkit版本：2025.09.3
+transformers版本：4.49.0
+pandas版本：2.3.3
+numpy版本：1.26.4
